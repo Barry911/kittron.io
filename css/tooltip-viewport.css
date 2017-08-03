@@ -1,0 +1,24 @@
+
+.tooltip {
+  min-width: 110px;
+  max-width: 300px;
+}
+.tooltip .tooltip-inner {
+  min-width: 30px;
+  max-width: 110px;
+  min-height: 30px;
+  text-align: center;
+}
+.container-viewport {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  left: 100px;
+  height: 30px;
+  background-color: #eee;
+}
+.btn-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

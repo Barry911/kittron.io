@@ -1,0 +1,146 @@
+<style>
+    .list{
+        list-style-type: none;
+    }
+    .list li{
+        float: left;
+        padding: 5px;
+    }
+    button {
+        margin-top: 4px;
+    }
+
+</style>
+<div>
+    <div class="alert alert-info">
+        Your site address is <strong><a>www.xyz.kr.com</a></strong>
+    </div>
+
+    <div>
+        <h4>Site Details</h4>
+        <div>
+            <div class="col-md-12 col-sm-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading clearfix">
+                        <h5 class="col-sm-2">Logo</h5>
+                        <button type="button" class="pull-right btn btn-primary">Edit <i class="fa fa-wa fa-edit"></i></button>
+                        <button type="button" class="pull-right btn btn-primary">Save <i class="fa fa-wa fa-check"></i></button>
+                    </div>
+                    <div class="panel-body">
+                        <form novalidate>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Brand Name</label>
+                                <div class="col-sm-4 input-group controls">
+                                    <input type="email" class="form-control" id="brand_name" placeholder="Brand / Business Name" ng-model="brand_name" ng-pattern="" ng-required="true">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-4 input-group controls">
+                                    <input type="email" class="form-control" id="email_address" placeholder="Business Address" ng-model="business_address" ng-pattern="" ng-required="true">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-envelope"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Business description</label>
+                                <div class="col-sm-4 input-group controls">
+                                    <textarea cols="10" class="form-control"  placeholder="Business description" ng-model="brand_name" ng-pattern="" ng-required="true"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Address</label>
+                                <div class="col-sm-4 input-group controls">
+                                    <input type="email" class="form-control" id="business_address" placeholder="Business Address" ng-model="business_address" ng-pattern="" ng-required="true">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-building"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Contact Number</label>
+                                <div class="col-sm-4 input-group controls">
+                                    <input type="email" class="form-control" id="contact_num" placeholder="Contact Number" ng-model="contact_num" ng-pattern="" ng-required="true">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-mobile-phone"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Social Links</label>
+                                <div class="col-sm-4 input-group controls">
+                                    <input type="text" class="form-control" id="facebook_link" placeholder="Facebook Username" ng-model="facebook_link" ng-pattern="" ng-required="true">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-facebook"></i></span>
+                                </div>
+                                <div class="col-sm-4 col-sm-offset-2 input-group controls">
+                                    <input type="email" class="form-control" id="twitter_link" placeholder="Twitter Handle" ng-model="twitter_link" ng-pattern="" ng-required="true">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-twitter"></i></span>
+                                </div>
+                                <div class="col-sm-4 col-sm-offset-2 input-group controls">
+                                    <input type="email" class="form-control" id="insta_link" placeholder="Instagram Handle" ng-model="insta_link" ng-pattern="" ng-required="true">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-instagram"></i></span>
+                                </div>
+                            </div>
+                        </form>                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+    <div>
+        <h4>Site Files</h4>
+            <div class="col-md-12 col-sm-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading clearfix">
+                        <h5 class="col-sm-2">Logo</h5>
+                        <button type="button" class="pull-right btn btn-primary">Upload logo</button>
+                    </div>
+                    <div class="panel-body">
+                        <img src="" class="image" width="100px" height="100px">
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-md-12 col-sm-10">
+
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <h5 class="col-sm-2">My Collection</h5>
+                    <button type="button" class="pull-right btn btn-primary">Upload to collection</button>
+                </div>
+                <div class="panel-body">
+                    <ul class="list">
+                        <li>
+                            <img src="" class="image" width="200px" height="200px">
+                            <br/>
+                            <button type="button" class="btn btn-primary">Change</button>
+                            <button type="button" class="btn btn-danger">X</button>
+                        </li>
+                        <li>
+                            <img src="" class="image" width="200px" height="200px">
+                            <br/>
+                            <button type="button" class="btn btn-primary">Change</button>
+                            <button type="button" class="btn btn-danger">X</button>
+                        </li>
+                        <li>
+                            <img src="" class="image" width="200px" height="200px">
+                            <br/>
+                            <button type="button" class="btn btn-primary">Change</button>
+                            <button type="button" class="btn btn-danger">X</button>
+                        </li>
+                        <li>
+                            <img src="" class="image" width="200px" height="200px">
+                            <br/>
+                            <button type="button" class="btn btn-primary">Change</button>
+                            <button type="button" class="btn btn-danger">X</button>
+                        </li>
+                        <li>
+                            <img src="" class="image" width="200px" height="200px">
+                            <br/>
+                            <button type="button" class="btn btn-primary">Change</button>
+                            <button type="button" class="btn btn-danger">X</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

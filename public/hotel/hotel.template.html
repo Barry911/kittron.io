@@ -1,0 +1,176 @@
+<style>
+
+.hotel-header{
+	height:270px;
+	width:100%;
+	background-image: url();
+	
+}
+.dd img{
+	position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+}
+
+.cd{
+	
+	position:absolute;
+}
+</style>
+
+<div ng-controller="MyCtrl">
+	<li class="no-decoration" ng-repeat="tech in technologyArray">
+		<label>
+			<input type="checkbox" ng-model="tech.on" ng-change="checkChange()" />{{tech.name}}</label>
+
+	</li>
+	<hr>
+	<div ng-repeat="portfolioItem in portfolioArray | filter:myFunc" class="ng-scope">
+		<h3>{{portfolioItem.name}}</h3>
+	</div>
+</div>
+<div flex="100" layout="row" layout-align="center center" >
+	<md-content flex="100" style="background-image: url(images/hotel.png); min-height: 300px;">
+		<md-content flex="95" layout="row" layout-align="center center" style="margin-left: 2.5%; margin-top: 100px" class="md-whiteframe-14dp">
+			<form>
+				<div>
+                <md-input-container >
+                  <label>Location</label>
+                  <md-icon class="material-icons">place</md-icon>
+                  <input ng-model="user.name" type="text">
+                </md-input-container>
+
+                <md-datepicker ng-model="ctrl.myDate" md-placeholder="Check-in date" md-open-on-focus></md-datepicker>
+                <md-datepicker ng-model="ctrl.myDatse" md-placeholder="Check-out date" md-open-on-focus></md-datepicker>
+      
+			
+				 <md-input-container>
+				  <label>Rooms</label>
+				   <md-select ng-model="ctrl.userState">
+				    <md-option><em>None</em></md-option> 
+				    <md-option ng-repeat="state in [1,2,3,4,5]" ng-value="state" ng-disabled="$index === 1"> {{state}} </md-option> 
+				    </md-select>
+				   </md-input-container> 			
+				 <md-input-container>
+				  <label>Adults</label>
+				   <md-select ng-model="ctrl.userState">
+				    <md-option><em>None</em></md-option> 
+				    <md-option ng-repeat="state in [1,2,3,4,5]" ng-value="state" ng-disabled="$index === 1"> {{state}} </md-option> 
+				    </md-select>
+				   </md-input-container> 			
+				 <md-input-container>
+				  <label>Children</label>
+				   <md-select ng-model="ctrl.userState">
+				    <md-option><em>None</em></md-option> 
+				    <md-option ng-repeat="state in [1,2,3,4,5]" ng-value="state" ng-disabled="$index === 1"> {{state}} </md-option> 
+				    </md-select>
+				   </md-input-container> 			
+			</div>
+			
+			<div layout="row" layout-align=" center">
+				<md-button class="md-raised md-accent" ng-click="find_hotel()">find a hotel</md-button>
+			</div>
+			</form>
+		</md-content>
+	</md-content>
+</div>
+
+<div>
+	<md-content flex="100">
+		<md-card>
+			<md-card-title>
+			<md-card-title-text>
+				<span class="md-subhead">Find great deals for your next trip</span>
+				<p>From budget hotels to luxurious apartments, book for less!</p>
+			</md-card-title-text>
+			</md-card-title>
+		</md-card>
+		<md-card>
+			<md-card-title>
+			<md-card-title-text>
+				<span class="md-subhead">Book now pay at check-in</span>
+				<p>With FREE cancellation on most rooms</p>
+			</md-card-title-text>
+			</md-card-title>
+		</md-card>
+		<md-card>
+			<md-card-title>
+			<md-card-title-text>
+				<span class="md-subhead">Price matching</span>
+				<p>Find something cheaper? We'll refund the difference!</p>
+			</md-card-title-text>
+			</md-card-title>
+		</md-card>
+			</md-content>
+</div>
+
+<md-card layout="column" flex="" layout-align="center center">
+			<div>Subscribe for the best discount and offers</div>
+			<div>
+			<form>
+					<md-input-container flex="100">
+            <label>Email</label>
+             <md-icon class="material-icons">mail</md-icon>
+           <input ng-model="user.name" type="text">
+        </md-input-container>
+				
+					 <md-button class="md-raised md-primary">Subscribe</md-button>
+				
+				</form>
+			</div>
+			
+       
+		</md-card>
+		
+		 <div layout="column">
+     		 <span flex-md='80' class='kr_dt b_txt'>
+          	<p class='underline'>TESTIMONIALS</p>
+          </span>
+          
+          <div class="kr_test_bg" layout="row" layout-sm='column' layout-align="start space-between" flex>
+          		<div flex-gt-md="50" flex-sm='100' class="md-padding" flex-md="50">
+          			<md-content style='border-radius:10px;'>
+          		<p class='kr_tst' style="padding-left:10px; padding-right:10px;">
+          			ehhhsjjsjj
+          		</p>
+          			 <md-toolbar>
+      							<h5 style='padding-left:10px;'>-Barry Ogbonna</h5>
+      							<i style='padding-left:10px;'>-Barry Ogbonna</i>
+							    </md-toolbar>
+							    
+     						<md-fab-speed-dial md-direction="left" class="md-scale md-fab-top-right">       
+						    
+						      </md-fab-trigger>
+						      <span style='border-radius:100%;  padding:10px ; background-color:white;'>
+						      <img src='images/png/003-holidays.png' width='50px' />
+						    
+						      </span>
+						      </md-fab-speed-dial>			          
+						</md-content>
+          		</div>
+
+          		<div flex-md="50" flex-sm='100' class="md-padding" flex-gt-md="50">
+          			<md-content style='border-radius:10px;'>
+			          		<p class='kr_tst' style="padding-left:10px; padding-right:10px;">
+			          			ehhhsjjsjj
+			          		</p>
+	          			 <md-toolbar>
+      							<h5>-Barry Ogbonna</h5>
+      							<i>-Barry Ogbonna</i>
+							    </md-toolbar>
+
+     						<md-fab-speed-dial md-direction="left" class="md-scale md-fab-top-right">
+						      <md-fab-trigger>
+						        <md-button aria-label="menu" class="md-fab md-primary">
+						          <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
+						          <md-icon class="material-icons" aria-label="menu">search</md-icon>
+						        </md-button>
+						      </md-fab-trigger>
+						     </md-fab-speed-dial>
+						</md-content>
+          		</div>
+          </div>
+     </div>

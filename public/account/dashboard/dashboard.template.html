@@ -1,0 +1,160 @@
+<script>
+    $(document).ready(function() {
+        $('.scrollbox').enscroll();
+    });
+</script>
+<style>
+
+
+</style>
+<div ng-controller="DashboardCtrl as dc">
+    <md-sidenav layout="column" class=" md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="false">
+        <md-toolbar class="md-tall md-hue-2">
+            <span flex></span>
+            <div layout="column" class="md-toolbar-tools-bottom inset">
+                <user-avatar></user-avatar>
+                <span></span>
+                <div>Firstname Lastname</div>
+                <div>barry@domainname.com</div>
+            </div>
+        </md-toolbar>
+        <div>
+
+        <md-button  layout="column" layout-align="center center"
+                    flex class="capitalize" ng-click=""
+                    ui-sref-active="md-warn" ui-sref="dashboard.home">
+        <div class="md-tile-content">
+            Dashboard
+            <md-icon md-svg-src="images/svg/ic_dashboard_48px.svg">
+        </div>
+        </md-button>
+
+        <md-button  layout="column" layout-align="center center"
+                    flex class="capitalize" ng-click=""
+                    ui-sref-active="md-warn" ui-sref="dashboard.reports">
+        <div class="md-tile-content">
+            Reports
+            <md-icon md-svg-src="images/svg/ic_report_48px.svg">
+        </div>
+        </md-button>
+
+        <md-button  layout="column" layout-align="center center"
+                    flex class="capitalize" ng-click=""
+                    ui-sref-active="md-warn" ui-sref="dashboard.app_tour">
+        <div class="md-tile-content">
+            App tour
+            <md-icon md-svg-src="images/svg/ic_explore_48px.svg">
+        </div>
+        </md-button>
+
+        <md-button  layout="column" layout-align="center center"
+                    flex class="capitalize" ng-click="vm.selectItem(item)"
+                    ui-sref-active="md-warn" ui-sref="dashboard.mail_box">
+        <div class="md-tile-content">
+            Mail Box
+            <md-icon md-svg-src="images/svg/ic_inbox_48px.svg">
+        </div>
+        </md-button>
+
+        <md-button  layout="column" layout-align="center center"
+                    flex class="capitalize" ng-click="vm.selectItem(item)"
+                    ui-sref-active="md-warn" ui-sref="dashboard.manage_events">
+        <div class="md-tile-content">
+            Manage Events
+            <md-icon md-svg-src="images/svg/ic_event_48px.svg">
+        </div>
+        </md-button>
+
+        <md-button  layout="column" layout-align="center center"
+                    flex class="capitalize" ng-click="vm.selectItem(item)"
+                    ui-sref-active="md-warn" ui-sref="dashboard.contacts">
+        <div  class="md-tile-content">
+            Manage Contacts
+            <md-icon md-svg-src="images/svg/ic_contacts_48px.svg">
+        </div>
+        </md-button>
+
+        <md-button  layout="column" layout-align="center center"
+                    flex class="capitalize" ng-click="vm.selectItem(item)"
+                    ui-sref-active="md-warn" ui-sref="dashboard.manage_site">
+        <div class="md-tile-content">
+            Manage Site
+            <md-icon md-svg-src="images/svg/ic_public_48px.svg">
+        </div>
+        </md-button>
+
+        <md-divider>
+        </md-divider>
+
+        <div>
+            <md-button  layout="column" layout-align="center center"
+                        flex class="capitalize" ng-click="vm.selectItem(item)"
+                        ui-sref-active="md-warn" ui-sref="dashboard.manage_site">
+                <div class="md-tile-content">
+                    Manage Site
+                    <md-icon md-svg-src="images/svg/ic_dashboard_48px.svg">
+                </div>
+            </md-button>
+            <md-button  layout="column" layout-align="center center"
+                        flex class="capitalize" ng-click="vm.selectItem(item)"
+                        ui-sref-active="md-warn" ui-sref="dashboard.manage_site">
+                <div class="md-tile-content">
+                    Manage Site
+                    <md-icon md-svg-src="images/svg/ic_dashboard_48px.svg">
+                </div>
+            </md-button>
+        </div>
+        </div>
+
+    </md-sidenav>
+        <!--Left side nav-->
+
+    <md-content flex layout="column">
+        <div>
+            <md-content class="md-theme-light" layout="row">
+                <md-button class="md-icon-button" layout-align="" ng-click="dc.toggleLeft()">
+                    <md-icon md-svg-icon="menu"></md-icon>
+                </md-button>
+                <span flex>
+
+                </span>
+                <md-button class="md-icon-button" layout-align="center end" ng-click="dc.toggleRight()">
+                    <md-icon md-svg-src="images/svg/ic_settings_24px.svg"></md-icon>
+                </md-button>
+            </md-content>
+        </div>
+    </md-content>
+    <md-content>
+                <ui-view></ui-view>
+    </md-content>
+
+
+    <div layout-align="center end">
+        <md-sidenav  layout="column" class="md-sidenav-right md-whiteframe-z2"  md-component-id="right" md-is-locked-open="false">
+            <md-content class="md-padding" layout-align="center center">
+                <md-tabs md-border-bottom>
+                    <md-tab label="{{tab.title}} prefrence">
+                        <div class="" style="padding: 25px;">
+                            <div>settings</div>
+                            <br/>
+                        </div>
+                    </md-tab>
+                    <md-tab label="{{tab.title}} settings">
+                        <div class="" style="padding: 25px; text-align: center;">
+                            <div>preference</div>
+                            <br/>
+                        </div>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+
+        </md-sidenav>
+    </div>
+
+
+</div>
+
+
+  <script type="application/javascript" src="../../../public/account/dashboard/js/jquery-2.2.3.min.js"></script>
+  <script type="application/javascript" src="../../../public/account/dashboard/js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="../../../public/account/dashboard/js/dashboard.js"></script>
