@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="kittron" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="kittron" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="kittron" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="kittron" class="no-js"  ng-strict-di> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="kittron" class="no-js"  ng-strict-di ng-controller="MainCtrl"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,8 @@
   <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">-->
   <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">-->
   <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/angular-fx.min.css">
   
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Fira+Mono|Pavanam|Swanky+and+Moo+Moo" rel="stylesheet">
@@ -20,7 +22,7 @@
   <!--<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>-->
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+  <script src="js/angular.js"></script>
   <script src="js/angular-ui-router.js"></script>
 
   <script src="js/angular-animate.js"></script>
@@ -41,6 +43,7 @@
   <!--app-->
   <script src="app.module.js"></script>
   <script src="app.config.js"></script>
+  <script src="mainCtrl.js"></script>
 
   <!--home-page-->
   <script src="public/home/home.module.js"></script>
@@ -185,26 +188,51 @@
 </head>
 <body>
 
-<div class="menu hide-menu">
+<div class="menu" ng-show="showMenu">
 <span class="md-padding" layout="row" layout-align="start end">
 	<span>
-		<img src="k_logo.png" width="25px" height="25px"/>
+		<a id="logo-container" ng-click="goto('home')" class="brand-logo left" style="margin-top:5px; ">
+        <img src="kittron_logo.png"/>
+    </a>
 	</span>
 	<span flex>
 	</span>
 	<span>
-		<md-button class="md-icon-button " aria-label="close">x
+		<md-button class="md-icon-button" ng-click="menuToggle()" aria-label="close">
         <md-icon class="material-icons" ng-bind="'close'"></md-icon>
      </md-button>
 	</span>
 </span>
 <span layout="row" layout-align="center center">
-	<md-button class="md-primary">Login</md-button>
-	<md-button class="md-primary">Sign up</md-button>
+	<md-button class="md-primary" ng-click="goto('login')">
+	<md-icon class="material-icons" ng-bind="'exit_to_app'"></md-icon>
+	Login
+	</md-button>
+	<md-button class="md-primary" ng-click="goto('register.basic')">
+	<md-icon class="material-icons" ng-bind="'create'"></md-icon>
+	Sign up
+	</md-button>
 	
-	<span>
-		<md-button class="md-primary">Close</md-button>		
-	</span>
+</span>
+
+<span layout="column">
+<md-divider></md-divider>
+<div>
+<md-content layout-align="center center">
+<md-list flex>
+	 <md-list-item class="md-2-line">
+	  <img ng-src="" class="md-avatar" alt="us" /> 
+	  <div class="md-list-item-text">
+	   <h3>who we</h3> 
+	   <p>Secondary text</p> </div> 
+	   </md-list-item> 
+	     <md-list-item class="secondary-button-padding">
+    		<p>Clicking the button to the right will fire the secondary action</p>
+   		 <md-button class="md-secondary">More Info</md-button>
+  		</md-list-item>
+</md-list>
+</md-content>
+</div>
 </span>
 			
 </div>
@@ -242,7 +270,7 @@
         <span flex></span>
    
       </div>
-    <div class="md-toolbar-tools nav-wrappr contaner" ng-show="showSearch" >
+    <div class="md-toolbar-tools nav-wrappr contaner" ng-show="showSearch" ngfx-fade-in="showSearch">
     <span flex>
 
      </span>
@@ -255,7 +283,7 @@
             <input ng-model="search.who" placeholder="search here">
         </md-input-container>
 
-        <md-button class="md-icon-button " aria-label="Search" ng-click="showSearch = !showSearch">
+        <md-button class="md-icon-button " aria-label="Search">
             <md-icon class="material-icons white600" ng-bind="'search'"></md-icon>
         </md-button>
 
@@ -270,7 +298,7 @@
 		        <md-icon class="material-icons white600">search</md-icon>
 		      </md-button>
 	     </span>    
-		      <md-button class="md-icon-button" hide-md aria-label="Menu">
+		      <md-button class="md-icon-button" hide-md aria-label="Menu" ng-click="menuToggle()">
 		        <md-icon class="material-icons white600"  ng-bind="'menu'"></md-icon>
 		      </md-button>
     </div>
